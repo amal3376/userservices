@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "UserService",
+    "version": "1.0"
+  },
+  "host": "api.server.test",
+  "basePath": "/",
+  "schemes": [
+    "http://localhost:3030/"
+  ],
+  "paths": {
+    "/auth/home": {
+      "get": {
+        "description": "To check the api is working fine or not",
+        "responses": {
+          "200": {
+            "description": "Return success if the application works well."
+            }
+          }
+        }
+      },
+    "/auth/signin": {
+      "post": {
+        "description": "Url to login with post by having the emailis, phoneno and password as parameter",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "mailId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "body",
+            "name": "phoneNumber",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "body",
+            "name": "password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "It returns the sessionid along with the required details",
+            "content":{
+              "application/json"  : {
+                "schema": {
+                  "type": "array"
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    }
+  }
+
+
